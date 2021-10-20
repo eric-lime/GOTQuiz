@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
+        <title>Game of Thrones Quiz!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="header-heading">Game of Thrones Quiz</h1>
+        </div>
+        <!--Quiz Section-->
+        <form id="form">
+
+            <!--First Question-->
+            <section class="question">
+                <h3 class="question-title">Who is the king of Westeros when the series begins?</h3>
+                <label for="eddark"><input type="radio" name="king" value="0" id="eddark">Eddark Stark</label>
+                <label for="tywin"><input type="radio" name="king" value="0" id="tywin">Tywin Lannister</label>
+                <label for="robert"><input type="radio" name="king" value="20" id="robert">Robert Baratheon</label>
+                <label for="aerys"><input type="radio" name="king" value="0" id="aerys">Aerys Targaryan</label>
+            </section>
+            
+
+            <!--Second Question-->
+            <section class="question">
+                <h3 class="question-title">What king dies in Season 1?</h3>
+                <label for="robert"><input type="radio" name="death" value="20" id="robert">Robert</label>
+                <label for="tommen"><input type="radio" name="death" value="0" id="tommen">Tommen</label>
+                <label for="joffrey"><input type="radio" name="death" value="0" id="joffrey">Joffrey</label>
+                <label for="stannis"><input type="radio" name="death" value="0" id="stannis">Stannis</label>
+            </section>
+
+            <!--Third Question-->
+            <section class="question">
+                <h3 class="question-title">What is the name of Jon's direwolf</h3>
+                <label for="ghost"><input type="radio" name="wolf" value="20" id="ghost">Ghost</label>
+                <label for="nymeria"><input type="radio" name="wolf" value="0" id="nymeria">Nymeria</label>
+                <label for="greywind"><input type="radio" name="wolf" value="0" id="greywind">Grey Wind</label>
+                <label for="summer"><input type="radio" name="wolf" value="0" id="summer">Summer</label>
+            </section>
+            
+
+            <!--Fourth Question-->
+            <section class="question">
+                <h3 class="question-title">Who is the true heir to the throne after Robert's death?</h3>
+                <label for="eddard"><input type="radio" name="heir" value="0" id="eddard">Eddard Stark</label>
+                <label for="joffrey"><input type="radio" name="heir" value="0" id="joffrey">Joffrey Baratheon</label>
+                <label for="stannis"><input type="radio" name="heir" value="20" id="stannis">Stannis Baratheon</label>
+                <label for="renly"><input type="radio" name="heir" value="0" id="renly">Renly Baratheon</label>
+            </section>
+            
+
+            <!--Fifth Question-->
+            <section class="question">
+                <h3 class="question-title">Who is Joffrey, Myrcella, and Tommen's real father?</h3>
+                <label for="lancel"><input type="radio" name="father" value="0" id="lancel">Lancel Lannister</label>
+                <label for="robert"><input type="radio" name="father" value="0" id="robert">Robert Baratheon</label>
+                <label for="tyrion"><input type="radio" name="father" value="0" id="tyrion">Tyrion Lannister</label>
+                <label for="jaime"><input type="radio" name="father" value="20" id="jaime">Jaime Lannister</label>
+            </section>
+            
+
+            <button type="submit" value="Submit">Submit</button>
+
+        </form>
+
+        <section id="grades">
+            <p>Your grade is: <span id="grade">_</span></p>
+            <p id="grade2"></p>
+        </section>
+        
+        <script>
+            document.getElementById("form").onsubmit = function(){
+                king = parseInt(document.querySelector('input[name = "king"]:checked').value);
+                death = parseInt(document.querySelector('input[name = "death"]:checked').value);
+                wolf = parseInt(document.querySelector('input[name = "wolf"]:checked').value);
+                heir = parseInt(document.querySelector('input[name = "heir"]:checked').value);
+                father = parseInt(document.querySelector('input[name = "father"]:checked').value);
+
+                result = king + death + wolf + heir + father;
+                document.getElementById("grade").innerHTML = result;
+
+                if (result == 0) {result1 = "I don't think you watched the show.<br/><img src='images/GOT1.jpeg' width='300'/>"};
+                if (result == 20) {result1 = "You must have only watched the first season. Try again.<br/><img src='images/GOT2.png' width='300'/>"};
+                if (result == 40) {result1 = "I think you could do better. Try again.<br/><img src='images/GOT3.jpeg' width= '300'/>"};
+                if (result == 60) {result1 = "Almost! Try again. <br/><img src='images/GOT4.jpeg' width = '300'/>"};
+                if (result == 80) {result1 = "Excellent! You're almost there!<br/><img src='images/GOT5.jpeg' width='300'/>"};
+                if (result == 100) {result1 = "Congratulations! You know you're Game of Thrones!<br/><img src='images/GOT6.jpeg' width='300'/>"};
+                document.getElementById("grade2").innerHTML = result1;
+
+                return false;
+            }
+        </script>
+    </body>
+</html>

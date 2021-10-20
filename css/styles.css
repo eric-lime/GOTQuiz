@@ -1,0 +1,56 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+/* Custom Styles */
+:root{
+    --ff-primary: "Source Sans Pro", sans-serif;
+    --ff-secondary: "Roboto", monospace;
+
+    --fw-reg: 200;
+    --fw-bold: 700;
+
+    --clr-light: white;
+    --clr-dark: #1c1c1c;
+    --clr-accent: #00a19b;
+
+    --fs-h1: 2.5rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+}
+
+/* General Styles */
+
+.header{
+    background-color: var(--clr-dark);
+    margin-top: 0;
+    border: 2px solid black;
+    height: 250px;
+    padding: 5px;
+    color: var(--clr-light);
+    background-image: url(https://image.shutterstock.com/z/stock-photo-the-concept-knights-close-up-1360539116.jpg);
+}
+
+.question{
+    margin-left: 20px;
+}
+.question label{
+    display: block;
+}
+
+.question input{
+    width: 30px;
+}
+
+#form button{
+    width: 120px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#grades{
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-left: 20px;
+}
